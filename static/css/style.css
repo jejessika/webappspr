@@ -1,0 +1,352 @@
+body {
+	background-image: url(healthcare-bg.jpg);
+	background-position: 15% 0%;
+	background-size: cover;
+}
+
+.jumbo {
+	padding: 1.2em;
+	position: relative;
+	text-align: center;
+	height: 100%;
+	display: block;
+	min-height: 600px;
+	min-width: 600px;
+}
+.jumbocontainer {
+	padding-top: 1.5em;
+	position: relative;
+	z-index: 2;
+	display: block;
+}
+
+.jumbo .displaytext {
+	color: white;
+	margin-top: 1em;
+	font-family: montserrat;
+}
+
+.jumbo p {
+	color: white;
+	font-family: roboto;
+}
+
+.jumbo hr {
+	border-color: white;
+	width: 18em;
+	border-width: 3px;
+}
+
+.btn {
+	border-radius: 15px;
+	margin: 1rem;
+}
+
+label {
+	font-family: montserrat;
+	color: white;
+	height: 50px;
+	width: 200px;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1{
+	font-size: 3em;
+}
+h1 span{
+	font-weight: bold;
+}
+
+#custom-text{
+	color: whitesmoke;
+	font-weight: lighter;
+}
+
+.cstmbtn {
+	margin-top: .6em;
+	border-radius: 15px;
+	padding: 1rem 4rem;
+	font-size: 1.5rem;
+}
+
+#custom-button {
+	border: .3em solid;
+	color: white;
+}
+
+#custom-button:hover {
+	color: white;
+	border-color: white;
+	background-color: white;
+}
+
+#arrow:hover {
+	color: #007bff; 
+}
+
+.layout{
+	display: flex;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.55);
+	background-size: cover;
+	z-index: 1;
+}
+
+.layout >div {
+	z-index: 2;
+}
+
+.footer{
+	background-color: #007bff;
+	position: relative;
+	display: flex;
+}
+
+.imagecreds {
+	margin: 0;
+	padding: .8em;
+}
+
+@media (max-width: 600px) {
+	.layout {
+		font-size: .9em;
+	}
+	h1 {
+		font-size: 2.25em;
+	}
+	.cstmbtn {
+		font-size: 1.35em;
+	}
+}
+
+.bg-custom {
+	background-color: rgba(0, 123, 255, 0)!important;
+}
+
+.resultbox {
+	width: 600px;
+	background-color: transparent; 
+	margin: 1.5em;
+	color: white;
+	text-align: left;
+	background: rgba(255, 255, 255, .2);
+	box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.55);
+}
+
+.resultbox a {
+	font-family: roboto;
+	font-size: 1em;
+}
+
+.box1 {
+	flex: 1;
+	margin: .1em;
+}
+
+.box2 {
+	flex: 2;
+	margin: .1em;
+}
+
+/*Table*/
+.dataTables_length label {
+	justify-content: start;
+	font-family: montserrat;
+	font-size: 1.5em;
+}
+
+.dataTables_length select {
+	background-color: rgba(255, 255, 255, 0.2);
+	color: white;
+	margin: 0 .1em 0 .1em;
+	border: transparent;
+	box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.1);
+	border-bottom: .25em solid #007bff;
+}
+
+.dataTables_length select:focus {
+	background-color: rgba(0, 0, 0, 0.45);
+	outline: none;
+}
+
+.dataTables_filter label {
+	justify-content: flex-end;
+	font-family: montserrat;
+	font-size: 1.5em;
+}
+
+.dataTables_filter label input {
+	background-color: transparent;
+	border: transparent;
+	border-bottom: .25em solid #007bff;
+	min-width: 13.5em;
+	color: white;
+	height: 1.5em;
+	font-weight: bolder;
+	font-family: montserrat;
+	overflow: auto;
+}
+
+.dataTables_filter label input:focus {
+	color: white;
+	opacity: .9;
+	font-family: montserrat;
+	outline: none;
+	box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.1);
+	background-color: rgba(255, 255, 255, .2);
+}
+
+table.dataTable {
+	border-collapse: unset;
+	border-collapse: collapse;
+}
+
+table {
+	min-width: 50em;
+	font-family: roboto;
+}
+
+thead {
+	background-color: rgba(0, 123, 255, .8);
+	padding: .1em;
+}
+
+#myTable thead tr th {	
+	border-collapse: unset;
+	border: .2em solid #002fff;
+}
+
+thead {
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+	font-family: montserrat;
+}
+
+table td {
+	border-left: .1em solid rgba(0, 0, 0, 0.3);
+	border-right: .1em solid rgba(0, 0, 0, 0.3);
+}
+table td:first-child {
+	border-left: none;
+	text-align: center;
+}
+table td:last-child {
+    border-right: none;
+}
+
+#myTable tbody tr:nth-child(even) {
+	background: rgba(255, 255, 255, .8);
+}
+#myTable tbody tr:nth-child(odd) {
+	background: rgba(255, 255, 255, .7);
+}
+#myTable tbody tr:hover {
+	background: rgba(255, 255, 255, .55);
+}
+
+#myTable_info {
+	font-family: montserrat;
+	color: white;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	color: white!important;
+	font-family: montserrat;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+	border: none;
+	color: white!important;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, .15) 0%, rgba(255, 255, 255, .15) 100%);
+	border-bottom: .25em solid #007bff;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+	border: none;
+	background: rgba(255, 255, 255, .2);
+	border-bottom: .25em solid #007bff;
+}
+
+.form-tab {
+	background: rgba(255, 255, 255, .75);
+	align-items: left; 
+	border-radius: .5em; 
+	display: flex; 
+	margin-bottom: .5em;
+	box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.55);
+	font-weight: 500;
+}
+
+.form-tab input {
+	background-color: transparent;
+	color: rgba(0, 0, 0, 0.75);
+	border: transparent;
+	border-bottom: .25em solid #007bff;
+}
+
+.form-tab input:focus {
+	background-color: rgba(255, 255, 255, .3);
+	outline: none;
+	color: rgba(0, 0, 0, 0.75);
+	box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.1);
+}
+
+.left-col {
+	text-align: left;
+	padding: .5em;
+	margin: .3em;
+	flex: 1;	
+}
+
+.left-col input::placeholder {
+	font-size: .6em;
+}
+.left-col input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-size: .6em;
+}
+.left-col input::-ms-input-placeholder { /* Microsoft Edge */
+	font-size: .6em;
+}
+
+.form-tab input::placeholder {
+	font-weight: 450;
+	color: rgba(0, 0, 0, 0.6);
+}
+.form-tab input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-weight: 450;
+	color: rgba(0, 0, 0, 0.6);
+}
+.form-tab input::-ms-input-placeholder { /* Microsoft Edge */
+	font-weight: 450;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.right-col {
+	text-align: left;
+	padding: .5em;
+	margin: .3em;
+	flex: 1;
+}
+
+.field_wrapper {
+	background-color: transparent;
+	align-items: left;
+	border-radius: .5em;
+}
+
+.field_wrapper a.remove_button {
+	color: red;
+}
+
+.field_wrapper a.remove_button:hover {
+	color: darkred;
+}

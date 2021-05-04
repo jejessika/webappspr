@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}User input{% endblock %}
+{% block h1 %}
+    User Input
+{% endblock %}
+{% block body %}
+<div class="container">
+    <form action="/user2" method="post">
+        <select name="baseline" id="baseline" class="form-tab custom-select" style="display:block; max-width: 20em; text-align: center; margin: auto;">
+            <option selected disabled>Select baseline method</option>
+            <option value="1">Manual</option>
+            <option value="2">Automatic</option>
+        </select>
+        <br>
+        <input type="submit"class="cstmbtn btn-primary" value="Submit">
+    </form>
+</div>
+{% endblock %}

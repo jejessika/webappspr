@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block head %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+</script>
+<style>
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+    
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -60px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+    
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    </style>
+{% endblock %}
+
+{% block title %}Recent Tests{% endblock %}
+
+{% block h1 %}
+    Recent Tests
+{% endblock %}
+
+{% block body %}
+<!--
+<div class="form-inline d-flex justify-content-end md-form form-sm active-cyan-2 mt-2" id="custom-filter">
+<input class="form-control-sm mr-3 w-75 no-outline" id="myInput" type="text" placeholder="Search.."aria-label="Search..">
+<i class="fas fa-search" aria-hidden="true" style="color:white;"></i>
+</div>
+-->
+<div style="margin: auto; position:relative; display: flex; font-size: .6em; flex-direction: column;">
+    <table class="table" id="myTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)"></th>
+                <th onclick="sortTable(1)">Patient's Name</th>
+                <th onclick="sortTable(2)">Test Date</th>
+                <th onclick="sortTable(3)">Test Result</th>
+                <th onclick="sortTable(3)"><span><i class="fas fa-chart-line" style="font-size: 1.2em;"></i></span></th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+        <tr >
+        {% for keyId, val in dbase.val().items() %}
+            <td>{{val['Pengujian']}}</td>
+            <td>{{val['Pasien']}}</td>
+            <td>{{val['Tanggal']}}</td>
+            <td>{{val['Hasil']}}</td>
+            <td style="text-align:center; align-content: center;">
+                <form action="recent_tests" method="post" style="margin: 0px">
+                <button type="submit" name="keyId" value="{{keyId}}" style="align-content: center; border: none; box-shadow: 0 .1em .3em rgba(0, 0, 0, .6); background-color: rgba(255, 255, 255, .2);">
+                    <span><i class="fas fa-chart-line" style="color: #002fff" data-toggle="tooltip" data-placement="right" title="See graph"></i></span>
+                </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.js"></script>
+<script type="text/javascript">
+    $('#myTable').DataTable({
+        paging: true,
+        scrollX: false,
+        lengthChange : true,
+        searching: true,
+        ordering: true,
+        hovering: true
+    }); 
+</script>
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();   
+    });
+</script>    
+{% endblock %}

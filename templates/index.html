@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+    COVID-19 SPR Based Test
+{% endblock %}
+
+{% block h1 %}
+    ANALYZE YOUR SPR DATA
+    <br>
+    <span>TO GET YOUR COVID-19 TEST RESULT</span>
+{% endblock %}
+
+{% block body %}
+    <p>Upload your file below ( .sp2, .csv, .xls, .xlsx )</p>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="ufile" id="ufile" accept=".csv, .xls, .xlsx, .sp2" style="display: none;">
+
+        <!-- Custom upload button-->
+        <button type="button" class="btn btn-outline-primary" id="custom-button">
+            <i class="far fa-arrow-alt-circle-up" style="font-size: 3em; padding: .5rem;" id="arrow"></i>                </button>
+        <br>
+        <span id="custom-text">No file choosen</span>
+        <script src="{{url_for('static', filename='js/jsfile.js')}} ">
+        </script>
+        <hr>
+        <button type="submit" class="cstmbtn btn-primary"><span id="submitbtn">ANALYZE</span></button>
+    </form>
+
+{% endblock %}

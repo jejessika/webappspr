@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}User input
+<style>
+    span#remove:hover {
+	color: darkred!important;
+}
+</style>
+{% endblock %}
+{% block h1 %}
+    User Input
+{% endblock %}
+{% block body %}      
+<div class="container">
+    <form action="/user" method="post">
+        <select name="baseline" id="baseline" class="form-tab custom-select" style="display:block; max-width: 20em; text-align: center; margin: auto;">
+            <option selected disabled>Select baseline method</option>
+            <option value="1">Manual</option>
+            <option value="2">Automatic</option>
+        </select>
+        <br>
+        <div class="field_wrapper">
+            <div class="form-tab form-list" id="index-1">
+                <div class="left-col">
+                    Input Sample:
+                    <input type="text" name="sampel1" id="sampel1" placeholder="e.g. (1) RBD, (2) IBV, (3) Non-specific Sample, (4) Unknow Sample" style="width: -webkit-fill-available"/>
+                </div>
+                <div class="right-col">
+                    Input Concentration (ng/mL):
+                    <input type="text" name="konsen1" id="konsen1" placeholder="e.g. 12" style="width: -webkit-fill-available">
+                </div>
+                <div style="margin: auto; padding: 1em;">
+                    <a href="javascript:void(0)" class="add_button"><span style="font-size: 1.5em"><i class="fas fa-plus-circle"></i></span></a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <input type="submit"class="cstmbtn btn-primary" value="Submit">
+    </form>
+</div>
+{% endblock %}
+
+{% block customjquery %}
+<script type="text/javascript" src="{{url_for('static', filename='js/jsform.js')}}"></script>
+{% endblock %}

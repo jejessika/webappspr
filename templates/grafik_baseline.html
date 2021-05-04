@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Baseline Plot{% endblock %}
+{% block h1 %}
+    Baseline Plot
+{% endblock %}
+{% block body %}
+<div style="width: 600px; height: 600px; margin: auto; position:relative; display: block;">
+    {{ div|safe }}
+    {{ script|safe }}
+</div>
+<br>
+
+<form action="/result" method="post">
+	<input type="submit" class="cstmbtn btn-primary" value="See Final Result">
+</form>
+
+{% endblock %}

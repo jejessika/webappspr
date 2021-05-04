@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+    {% endblock %}
+    <!-- cdn for bokeh -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.1.0/bokeh.min.css"
+    rel="stylesheet" type="text/css" crossorigin="anonymous">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.1.0/bokeh-widgets.css"
+    rel="stylesheet" type="text/css" crossorigin="anonymous">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.1.0/bokeh-tables.css"
+    rel="stylesheet" type="text/css" crossorigin="anonymous">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}} " type="text/css">
+
+    <!-- Page title -->
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/dnaicon.png')}}" type="image/png">
+</head>
+<body>
+  <section class="layout">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand text-white font-weight-bold" href="/">COVID-19 SPR-BASED TEST</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link text-white" href="/">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#total_results" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Total Results
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Positive</a>
+                  <a class="dropdown-item" href="#">Negative</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Total tests</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="recent_tests">Recent Tests</a>
+              </li>
+              <li class="nav-item dropwdown">
+                <a class="nav-link text-white" href="recent_tests">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#about_us">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Layout -->
+    <div class="jumbo">
+        <div class="jumbocontainer">
+            <h1 class="displaytext">
+                {% block h1 %}
+                {% endblock %}
+            </h1>
+            <hr class="my-4">
+            {% block body %} 
+            {% endblock %}
+        </div>
+    </div>
+    <div class="overlay"></div>
+  </section>
+  <section class="footer">
+    <div class="imagecreds" style="display: flex; position: relative;" >
+      <img src="{{ url_for('static', filename='img/logo-itb-512px.png')}}" alt="Logo ITB" height="42" style="margin: .3em;">
+      <img src="{{ url_for('static', filename='img/Unpad.png')}}" alt="Logo Univ Padjadjaran" height="42" style="margin: .3em;">
+      <img src="{{ url_for('static', filename='img/Logo_BPPT.png')}}" alt="Logo BPPT" height="42" style="margin: .3em;">
+      <img src="{{ url_for('static', filename='img/Logo_RistekBrin.png')}}" alt="Logo RISTEK-BRIN" height="42" style="margin: .3em;">
+    </div>
+  </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<!-- cdn for bokeh -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.1.0/bokeh.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.1.0/bokeh-widgets.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.1.0/bokeh-tables.js"></script>
+
+<!-- cdn for bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script></html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+{% block customjquery %}
+{% endblock %}

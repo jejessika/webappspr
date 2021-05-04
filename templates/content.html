@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Test Result{% endblock %}
+{% block h1 %}
+    Test Result
+{% endblock %}
+{% block body %}
+<div style="width: 600px; height: 600px; margin: auto; position:relative; display: block;">
+    {{ div|safe }}
+    {{ script|safe }}
+</div>
+<div class="resultbox" style="display: flex;">
+    <div class="box1">
+        <a>Pengujian </a>
+        <br>
+        <a>Nama Pasien </a>
+        <br>
+        <a>Tanggal Pengujian </a>
+        <br>
+        <a>Hasil </a>
+    </div>
+    <div class="box2">
+        <a>: {{data['Pengujian']}}</a>
+        <br>
+        <a>: {{data['Pasien']}}</a>
+        <br>
+        <a>: {{data['Tanggal']}}</a>
+        <br>
+        <a>: {{data['Hasil']}}</a>
+    </div>
+</div>
+
+{% endblock %}
