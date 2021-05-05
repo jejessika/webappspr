@@ -27,3 +27,5 @@ installed in a virtual environment. Therefore, you do not need to install each p
 5. Click enter and then “(env)” will show up on the left side indicating the virtual environment is successfully activated.
 6. Back to the directory of Web App where the Python web app program is located by typing “cd..”, click enter, and do it one more time until the Command Prompt directs to the Web App folder directory.
 7. Run the program by typing “python app.py” and click enter. Wait until your command prompt look like the above picture. Copy the http://127.0.0.1:5000/ and open it on your web browser.
+### ANALYTE CONCENTRATION INPUT LIMIT
+The developed Python algorithm for this program has user input feature to label the visualized graph result. On the ‘Input Sample’ column, input 1 for IBV, 2 for RBD, 3 for Non-specific Sample, and 4 for Unknown Sample. On the ‘Input Concentration’ column, input the analyte’s concentration in ng/mL unit. The analyte’s concentration can’t be more than 10 ng/mL due to this program’s algorithm.
