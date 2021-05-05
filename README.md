@@ -1,7 +1,7 @@
 # Web-based Surface Plasmon Resonance (SPR) Signal Processing System for Fast Analyte Analysis
 
 ## Summary
-We introduce a web-based application for SPR sample data analysis with Python’s Matplotlib and Bokeh as the primary tools. Users can directly upload and analyze the SPR data output, where the data are stored in the Firebase cloud storage. The web application is embedded with several features, including the graph label, tooltips, and interactive legend. With this application, SPR sample analysis only needs to be run within minutes, and the system is made portable by implementing Python virtual environment.
+We introduce a web-based application for SPR sample data analysis with Python’s Matplotlib and Bokeh as the primary tools. Users can directly upload and analyze the SPR data output, where the data are stored in the Firebase cloud storage. The web application is embedded with several features, including the graph label, tooltips, and interactive legend. With this application, SPR sample analysis only needs to be run within minutes, and the system is made portable by implementing Python virtual environment. The PDF version of the manual is available here [https://github.com/jejessika/webappspr/blob/main/Web%20App%20Manual%20Book_Final.pdf].
 
 ## Getting Started
 ### Installing Python
