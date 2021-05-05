@@ -29,3 +29,7 @@ installed in a virtual environment. Therefore, you do not need to install each p
 7. Run the program by typing “python app.py” and click enter. Wait until your command prompt look like the above picture. Copy the http://127.0.0.1:5000/ and open it on your web browser.
 ### ANALYTE CONCENTRATION INPUT LIMIT
 The developed Python algorithm for this program has user input feature to label the visualized graph result. On the ‘Input Sample’ column, input 1 for IBV, 2 for RBD, 3 for Non-specific Sample, and 4 for Unknown Sample. On the ‘Input Concentration’ column, input the analyte’s concentration in ng/mL unit. The analyte’s concentration can’t be more than 10 ng/mL due to this program’s algorithm.
+### Code Version
+2020 (1.0)
+### License
+This project is licensed under the MIT License
